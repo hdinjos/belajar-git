@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>belajar js</title>
+</head>
+<body>
+    <div id="app">
+      <h1>ini kondisi di vuejs</h1>
+      <p v-if="condition === '20'">
+        kondisi 1
+      </p>
+      <p v-else-if="condition === '60'">
+        kondisi 2
+      </p>
+      <p v-else>kondisi 3</p>
+      <h4>Daftar kelas bootcamp</h4>
+      <p v-for="(bootcamp,index) in classes" :key="bootcamp.index">
+        {{bootcamp}}
+      </p>
+      <p>{{jalan}}</p>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
