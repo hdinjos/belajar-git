@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pertemuan pertama</title>
-    </head>
-    <body>
-        <h1>Halo dunia</h1>
-        <p>selamat datang di bootcamp praxis academy</p>
-        <a href="https://github.com/hdinjos">hdinjos</a>
-    </body>
+  <head></head>
+  <body>
+
+  <div id="app">
+
+  <input v-model="dataInput" type="text" placeholder="tulis apa aja"/>
+  <p v-if="tampil">ini dari input {{dataInput}}</p>
+  <div>
+    <button v-if="!tampil" @click="tampilkan">Tampilkan data inputan</button>
+  </div>
+  <div>
+    <button v-if="tampil" @click="tampilkan">Sembunyikan data inputan</button>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+   <script>
+   var vm = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello',
+        dataInput: '',
+        tampil: false
+    },
+    methods: {
+      tampilkan(){
+        if (this.dataInput === '') {
+          alert('data belum dimasukan')
+        } else {
+          this.tampil = !this.tampil;
+        } 
+      }
+    }
+
+})
+  </script>
+  </body>
 </html>
